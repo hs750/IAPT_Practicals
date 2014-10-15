@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Congo Online</title>
+        <meta charset="utf-8"/>
+        <style>
+            div.intro {
+                color: red;
+            }
+            div.glance {
+                color: blue
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+           CONGO STORE
+        </h1>
+         <ul>
+             <li><a href="congo/store/index">Home</a></li>
+             <li><a href="congo/store/books">Books</a></li>
+             <li><a href="congo/store/videos">Videos</a></li>
+        </ul>
+        {{include}}
+        {{pass}}
+    </body>
+</html>

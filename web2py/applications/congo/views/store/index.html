@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{{extend 'congo-layout.html'}}
+<html>
+    <head>
+        <title>Congo Store - Features</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div class="intro">
+            <h2>Featured</h2>
+        </div>
+        {{for item in features:}}
+        <div class="product">
+            {{=H3(item.products.name)}}
+            <div id="details">
+            <p>
+                Details
+            </p>
+            <ul>
+                <li>Publisher: {{=item.products.publisher}}</li>
+                <li>Format: {{=item.products.ptype}}</li>
+                <li>Price: {{=item.products.price}}</li>
+            </ul>
+            </div>
+            <div class="glance">
+            <p>
+                <b>At a Glance:	</b>
+                {{=I(item.products.description)}}
+            </p>
+            </div>
+        </div>
+    </body>
+</html>

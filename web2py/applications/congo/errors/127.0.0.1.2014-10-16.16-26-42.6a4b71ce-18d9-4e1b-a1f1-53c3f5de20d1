@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.SyntaxError'> primarykey must be a list of fields from table 'products'"
+p3
+sS'layer'
+p4
+S'/Users/Harrison/Uni/IAPT_Practicals/web2py/applications/congo/models/store.py'
+p5
+sS'code'
+p6
+S'db = DAL("sqlite://store.db")\n\ndb.define_table(\'products\', Field(\'pid\', \'id\'), Field(\'name\', \'string\'), Field(\'ptype\', \'string\'),\n                Field(\'description\', \'string\', length=10240), Field(\'price\', \'decimal(0,100\'),\n                Field(\'publisher\', \'string\'), primarykey=\'pid\')\n\ndb.define_table(\'features\', Field(\'fid\', \'id\'), Field(\'product_id\'), primarykey=\'fid\')'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/Users/Harrison/Uni/IAPT_Practicals/web2py/gluon/restricted.py", line 224, in restricted\n    exec ccode in environment\n  File "/Users/Harrison/Uni/IAPT_Practicals/web2py/applications/congo/models/store.py", line 5, in <module>\n    Field(\'publisher\', \'string\'), primarykey=\'pid\')\n  File "/Users/Harrison/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 8414, in define_table\n    table = self.lazy_define_table(tablename, *fields, **args)\n  File "/Users/Harrison/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 8430, in lazy_define_table\n    table = table_class(self, tablename, *fields, **args)\n  File "/Users/Harrison/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 8888, in __init__\n    % tablename)\nSyntaxError: primarykey must be a list of fields from table \'products\'\n'
+p11
+s.

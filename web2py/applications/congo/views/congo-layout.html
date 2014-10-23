@@ -12,17 +12,19 @@
             }
             h1{
                 font-family: courier;
+                color: black;
+                text-decoration: none;
             }
         </style>
     </head>
     <body>
         <h1 class="congo">
-           Congo Store
+          <a href={{=URL('default', 'index')}}>Congo Store</a>
         </h1>
          <ul>
-             <li><a href="../store/index">Home</a></li>
-             <li><a href="../store/books">Books</a></li>
-             <li><a href="../store/videos">Videos</a></li>
+             <li><a href={{=URL('store', 'index')}}>Featured</a></li>
+             <li><a href={{=URL('store', 'books')}}>Books</a></li>
+             <li><a href={{=URL('store', 'videos')}}>Videos</a></li>
         </ul>
         {{include}}
         {{pass}}

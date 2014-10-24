@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+{{if request.vars.code is not None:}}
+        <p>
+            You have been redirected with due to an error: {{=request.vars.code}}
+        </p>
+{{pass}}
 {{extend 'congo-layout.html'}}
 <html>
     <head>
@@ -13,5 +18,17 @@
            <a href={{=URL('default', 'addProduct')}}>Add Product</a>
              <a href={{=URL('default', 'addProduct2')}}>Add Product 2</a>
         </p>
+        <div style="color:blue">
+            <h2>Request</h2>
+            {{=BEAUTIFY(request)}}
+        </div>
+        <div style="color:red">
+            <h2>Response</h2>
+            {{=BEAUTIFY(response)}}
+        </div>
+        <div style="color:green">
+            <h2>Session</h2>
+            {{=BEAUTIFY(session)}}
+        </div>
     </body>
 </html>

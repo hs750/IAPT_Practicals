@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.ValueError'> invalid literal for long() with base 10: 'a'"
+p3
+sS'layer'
+p4
+S'/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/applications/congo/controllers/store.py'
+p5
+sS'code'
+p6
+S"# -*- coding: utf-8 -*-\n# try something like\n\n\ndef index(): \n    return dict(features=db(db.products.id == db.features.product_id).select())\n\n\ndef books():\n    if request.args(0) is not None and request.args(0) > 0:\n        return dict(books=db(db.products.id == request.args(0)).select())\n    else:\n        return dict(books=db(db.products.ptype == 'Book').select())\n\n\ndef videos():\n    return dict()\nresponse._vars=response._caller(books)\n"
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/gluon/restricted.py", line 224, in restricted\n    exec ccode in environment\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/applications/congo/controllers/store.py", line 18, in <module>\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/gluon/globals.py", line 392, in <lambda>\n    self._caller = lambda f: f()\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/applications/congo/controllers/store.py", line 11, in books\n    return dict(books=db(db.products.id == request.args(0)).select())\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 10749, in select\n    return adapter.select(self.query, fields, attributes)\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 2472, in select\n    return super(SQLiteAdapter, self).select(query, fields, attributes)\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 1868, in select\n    sql = self._select(query, fields, attributes)\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 1767, in _select\n    sql_w = \' WHERE \' + self.expand(query) if query else \'\'\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 1544, in expand\n    out = op(first, second, **optional_args)\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 1440, in EQ\n    self.expand(second, first.type))\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 1555, in expand\n    return str(self.represent(expression, field_type))\n  File "/Users/Harrison/Documents/Uni/IAPT_Practicals/web2py/gluon/dal.py", line 2005, in represent\n    return str(long(obj))\nValueError: invalid literal for long() with base 10: \'a\'\n'
+p11
+s.

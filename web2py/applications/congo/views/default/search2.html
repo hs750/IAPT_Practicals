@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{{extend 'congo-layout.html'}}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Search Congo</title>
+</head>
+<body>
+{{=form}}
+{{if results is not None:}}
+<h2>The results</h2>
+{{include "subviews/product-display.html"}}
+{{pass}}
+{{pass}}
+<p>{{=response.flash or ''}}</p>
+
+</body>
+</html>

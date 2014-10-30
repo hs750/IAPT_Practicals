@@ -1,0 +1,7 @@
+{{extend 'congo-layout.html'}}
+
+<h2>Search the Congo Store</h2>
+<!-- @IAPT - this is the little bit of code that will show our response messages in a simple div -->
+<div class="flash">{{=response.flash or ''}}</div>
+<!-- @IAPT - this line will serialise our code for the form out to HTML -->
+{{=updateform}}

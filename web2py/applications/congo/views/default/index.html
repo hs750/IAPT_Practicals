@@ -1,34 +1,33 @@
 <!DOCTYPE html>
+
 {{if request.vars.code is not None:}}
+        <div class="error">
         <p>
-            You have been redirected with due to an error: {{=request.vars.code}}
+            You have been redirected with due to an error:
+{{request.vars.ticket = A('Ticket', _href=URL('admin', 'default', 'ticket', args=[request.vars.ticket]))}}
+{{=BEAUTIFY(request.vars)}}
         </p>
+    </div>
 {{pass}}
+
 {{extend 'congo-layout.html'}}
-<html>
-    <head>
-        <title>Congo Store</title>
-        <meta charset="utf-8" />
-    </head>
-    <body>
-        <div class="intro">
-            <h2>Welcome To the Congo Store</h2>
-        </div>
-        <p>
-           <a href={{=URL('default', 'addProduct')}}>Add Product</a>
-             <a href={{=URL('default', 'addProduct2')}}>Add Product 2</a>
-        </p>
-        <div style="color:blue">
-            <h2>Request</h2>
-            {{=BEAUTIFY(request)}}
-        </div>
-        <div style="color:red">
-            <h2>Response</h2>
-            {{=BEAUTIFY(response)}}
-        </div>
-        <div style="color:green">
-            <h2>Session</h2>
-            {{=BEAUTIFY(session)}}
-        </div>
-    </body>
-</html>
+
+<div class="intro">
+    <h2>Welcome To the Congo Store</h2>
+</div>
+<p>
+   <a href={{=URL('default', 'addProduct')}}>Add Product</a>
+     <a href={{=URL('default', 'addProduct2')}}>Add Product 2</a>
+</p>
+<div style="color:blue">
+    <h2>Request</h2>
+    {{=BEAUTIFY(request)}}
+</div>
+<div style="color:red">
+    <h2>Response</h2>
+    {{=BEAUTIFY(response)}}
+</div>
+<div style="color:green">
+    <h2>Session</h2>
+    {{=BEAUTIFY(session)}}
+</div>

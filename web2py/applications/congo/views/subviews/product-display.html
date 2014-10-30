@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        {{if len(results) == 0:}}
-            <div class="error">
-                The product you were searching for could not be found.
-                {{=A('Click here to go home', callback=URL('index'))}}
-            </div>
-        {{else:}}
-        {{for item in results:}}
-        <div class="product">
-            {{=H3(A(item.name, callback=URL(args=[str(item.id)])))}}
-            <div id="details">
-            <p>
-                Details
-            </p>
-            <ul>
-                <li>Publisher: {{=item.publisher}}</li>
-                <li>Format: {{=item.ptype}}</li>
-                <li>Price: {{=item.price}}</li>
-            </ul>
-            </div>
-            <div class="glance">
-            <p>
-                <b>At a Glance:	</b>
-                {{=item.description}}
-            </p>
-            </div>
-            {{pass}}
-        </div>
-    </body>
-</html>
+
+{{if len(results) == 0:}}
+    <div class="error">
+        The product you were searching for could not be found.
+        {{=A('Click here to go home', callback=URL('index'))}}
+    </div>
+{{else:}}
+{{for item in results:}}
+<div class="product">
+    {{=H3(A(item.name, _href=URL(args=[str(item.id)])))}}
+    <div id="details">
+    <p>
+        Details
+    </p>
+    <ul>
+        <li>Publisher: {{=item.publisher}}</li>
+        <li>Format: {{=item.ptype}}</li>
+        <li>Price: {{=item.price}}</li>
+    </ul>
+    </div>
+    <div class="glance">
+    <p>
+        <b>At a Glance:	</b>
+        {{=item.description}}
+    </p>
+    </div>
+</div>
+{{pass}}

@@ -2,7 +2,7 @@
 {{extend 'layout.html'}}
 
 {{if 'message' in globals():}}
-<h3>{{=message}}</h3>
+<h3>{{=A(message, _href=URL('congo', 'default', 'index'))}}</h3>
 
 <h4>{{=T('How did you get here?')}}</h4>
 <ol>

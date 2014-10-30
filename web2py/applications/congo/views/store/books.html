@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 {{extend 'congo-layout.html'}}
-<html>
-    <head>
-        <title>Congo Store - Books</title>
-        <meta charset="utf-8" />
-    </head>
-    <body>
-        <div class="intro">
-            <h2>Books</h2>
-        </div>
-        {{results = books}}
-        {{include "subviews/product-display.html"}}
-    </body>
-</html>
+<div class="intro">
+    <h2>Books</h2>
+</div>
+<div class="features">
+    {{results = books}}
+    {{include "subviews/product-display.html"}}
+</div>

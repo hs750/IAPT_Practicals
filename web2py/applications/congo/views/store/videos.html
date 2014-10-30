@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 {{extend 'congo-layout.html'}}
-<html>
-    <head>
-        <title>Congo Store - Videos</title>
-        <meta charset="utf-8" />
-    </head>
-    <body>
-        <div class="intro">
-            <h2>Videos</h2>
-        </div>
-        {{results=db(db.products.ptype == "Blu-Ray").select()}}
-        {{include "subviews/product-display.html"}}
-    </body>
-</html>
+<div class="intro">
+    <h2>Videos</h2>
+</div>
+<div class="features">
+    {{results=db(db.products.ptype == "Blu-Ray").select()}}
+    {{include "subviews/product-display.html"}}
+</div>

@@ -1,0 +1,38 @@
+{{extend 'congo-layout.html'}}
+
+    <!-- @IAPT: A div that you can style for your introductory text -->
+    <div id="intro">
+        <p>Welcome one and all to the newly release Congo Online Shop. Here you will find books, videos and more all
+            delivered to your door!*</p>
+
+        <p id="proviso">*Delivery not yet available.</p>
+    </div>
+
+<h2>Features</h2>
+
+<!-- @IAPT: you can do DIV elements as helpers, but I find them very awkward to do as you have long stretches
+of code contained within brackets that can be hard to match up -->
+
+<div class="featured">
+        <!-- @IAPT: Loop through the dict returned from the default controller - note the 'item' only loops
+            through the keys of dict, so you have to action actual values from the nested dict in the data -->
+        {{for feature in features:}}
+        <!-- @IAPT: We can intersperse HTML within the Python statements -->
+        <div class="product">
+        <!-- @IAPT: Helper H3 puts an h3 header element around the text inside -->
+        <!-- @IAPT: In cases where we have a join returning data, we need to specify the table name - this is
+        because web2py needs to return both tables to us - there is a way to avoid this, but it involves abstracting
+        the database away even further than we have it right now -->
+        {{=H3(feature.products.name)}}
+        <ul>
+
+            <li><strong>Publisher:</strong> {{=feature.products.publisher}}</li>
+            <li><strong>Format:</strong> {{=feature.products.type}}</li>
+            <li><strong>Price:</strong> {{=feature.products.price}}</li>
+            <li><strong>Description:</strong> {{=feature.products.description}}</li>
+
+        </ul>
+        </div>
+        <!-- @IAPT: And now we need a pass statement to indicate the for loop block is done. -->
+        {{pass}}
+</div>

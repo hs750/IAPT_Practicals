@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.NameError'> global name 'product_id' is not defined"
+p3
+sS'layer'
+p4
+S'/Users/cpower/Development/iapt/applications/Practical4/controllers/store.py'
+p5
+sS'code'
+p6
+S'#@IAPT: Here the controller is returning a dictionary that contains all of the rows from the query.\n#@IAPT: Practical 3 - replaced the "books" with "results" to use the subview created.\ndef books():\n    product_id = request.args(0)\n    if product_id is not None:\n        return dict(results = db((db.products.type == \'Book\') & (db.products.id == product_id)).select())\n    else:\n        return dict(results = db(db.products.type == \'Book\').select())\n\n#@IAPT: So here is a version which is MVC based where we are just returning control to the view\n#This could be more advanced functionality, like committing changes from the user, doing intermediary\n#calculations that the user needs or any number of things in the business logic of the application.\n#It just happens that in this case, the controller doesn\'t have any business logic to execute.\n#@IAPT: Practical 3 - replaced the "books" with "results" to use the subview created.\ndef videos():\n    if product_id is not None:\n        return dict(results = db((db.products.type == \'Blu-Ray\') & (db.products.id == product_id)).select())\n    else:\n        return dict(results = db(db.products.type == \'Blu-Ray\').select())\n\nresponse._vars=response._caller(videos)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/Users/cpower/Development/iapt/gluon/restricted.py", line 224, in restricted\n    exec ccode in environment\n  File "/Users/cpower/Development/iapt/applications/Practical4/controllers/store.py", line 21, in <module>\n  File "/Users/cpower/Development/iapt/gluon/globals.py", line 392, in <lambda>\n    self._caller = lambda f: f()\n  File "/Users/cpower/Development/iapt/applications/Practical4/controllers/store.py", line 16, in videos\n    if product_id is not None:\nNameError: global name \'product_id\' is not defined\n'
+p11
+s.

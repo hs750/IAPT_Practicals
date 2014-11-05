@@ -8,12 +8,12 @@
         <p id="proviso">*Delivery not yet available.</p>
     </div>
 
-<h2>Features</h2>
-
 <!-- @IAPT: you can do DIV elements as helpers, but I find them very awkward to do as you have long stretches
 of code contained within brackets that can be hard to match up -->
 
-<div class="featured">
+<div id="products">
+        <h2>Features</h2>
+
         <!-- @IAPT: Loop through the dict returned from the default controller - note the 'item' only loops
             through the keys of dict, so you have to action actual values from the nested dict in the data -->
         {{for feature in features:}}
@@ -36,3 +36,4 @@ of code contained within brackets that can be hard to match up -->
         <!-- @IAPT: And now we need a pass statement to indicate the for loop block is done. -->
         {{pass}}
 </div>
+<div id="ad">Here is where an ad will go to make us lots of money.</div>

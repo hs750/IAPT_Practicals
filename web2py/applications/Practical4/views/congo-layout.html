@@ -10,11 +10,12 @@
     <title>Congo Online Shop - Features</title>
     <meta name="description" content="">
     <meta name="author" content="Christopher Power">
+    <!-- @IAPT Most straight forward way to include a stylesheet is by creating one using the URL helper -->
+    <link rel="stylesheet" type="text/css" href="{{=URL('static','css/iapt.css')}}" media="screen" />
 
 </head>
 <body>
 <!-- @IAPT: Extra div element id with main could be replaced by HTML5 extension spec <main> -->
-<div id="main">
 
     <!--@IAPT: HTML5 element header helps add semantic structure the page, telling machines where the top of the page is -->
     <header>
@@ -25,25 +26,27 @@
         <!-- @IAPT: A basic navigation list which is modified by CSS to be horizontal - note the use of the class .navlist -->
         <ul class="navlist">
             <!-- @IAPT: Note that local files like this will lead to the same application and same controller as the current page -->
-            <li><a href="../default/index.html">Features</a></li>
+            <li><a href="{{=URL('default','index.html')}}">Features</a></li>
             <!-- @IAPT: This also works, but Web2Py provides elegant ways to rewrite URLS for controllers and callbacks -->
-            <li><a href="../store/books.html">Books</a></li>
-            <li><a href="../store/videos.html">Videos</a></li>
-            <li><a href="../default/search.html">Search</a></li>
+            <li><a href="{{=URL('store','books.html')}}">Books</a></li>
+            <li><a href="{{=URL('store','videos.html')}}">Videos</a></li>
+            <li><a href="{{=URL('default','search.html')}}">Search</a></li>
+            <li><a href="{{=URL('default','addproduct.html')}}">New Product</a></li>
         </ul>
     </nav>
+<div id="main">
 
     <!-- @IAPT: This is where the body of your page will be included -->
     {{include}}
     <!-- @IAPT: 'pass' is a python keyword that indicates it is the end of a block of python text -->
     {{pass}}
-</div>
+</div> <!-- main -->
 <footer>
     <p>
         &copy; Copyright University of York, IAPT Module
     </p>
 </footer>
-</div>
+
 
 
 </body>

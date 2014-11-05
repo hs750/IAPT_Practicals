@@ -1,0 +1,21 @@
+{{extend 'recipe-layout.html'}}
+<div>
+    <dl>
+        {{for ingredient in ingredients:}}
+        <dt>{{=A(ingredient.name, callback=URL('recipe', 'default', 'ingredients', args=[ingredient.name]))}}</dt>
+            {{if ing is not None:}}
+                {{for row in ing:}}
+                    {{if row.name == ingredient.name:}}
+                        <dd>
+                            <table>
+                                {{for attr in row:}}
+                                    {{=TR(TD(attr), TD(row(attr)))}}
+                                {{pass}}
+                            </table>
+                        </dd>
+                    {{pass}}
+                {{pass}}
+            {{pass}}
+        {{pass}}
+    </dl>
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3884935612">
+    <data-source source="LOCAL" name="recipe" uuid="a5d7d1fa-12e3-4a2d-be16-e109e48369ab">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/web2py/applications/Recipe/databases/recipe.db</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

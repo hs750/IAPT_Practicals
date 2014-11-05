@@ -1,0 +1,9 @@
+{{extend 'recipe-layout.html'}}
+<h2>Add Recipe</h2>
+{{=addRecipe}}
+{{=searchIngredient}}
+{{if addIngredient is not None:}}
+    {{=addIngredient}}
+{{else:}}
+    {{=newIngredient}}
+{{pass}}

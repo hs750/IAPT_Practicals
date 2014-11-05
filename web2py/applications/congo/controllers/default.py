@@ -50,9 +50,9 @@ def addProduct():
 def addProduct2():
     db.products.description.widget = SQLFORM.widgets.text.widget
     if request.args(0) is not None:
-        form = SQLFORM(db.products, db.products(request.args(0)))
+        form = SQLFORM(db.products, db.products(request.args(0)), formstyle='bootstrap')
     else:
-        form=SQLFORM(db.products)
+        form=SQLFORM(db.products, formstyle='bootstrap')
 
     if form.accepts(request.post_vars, session):
         response.flash = "Added to database..."

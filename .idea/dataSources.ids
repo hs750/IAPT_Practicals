@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="recipe" uuid="a5d7d1fa-12e3-4a2d-be16-e109e48369ab">
+    <database-info product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="ingredients" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="name" sqlType="CHAR(512)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="calories" sqlType="DOUBLE" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="sugar" sqlType="DOUBLE" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="fat" sqlType="DOUBLE" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="satfat" sqlType="DOUBLE" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="salt" sqlType="DOUBLE" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_recipeingredient_1" table="recipeingredient" schema="" catalog="" columns="ingredient_id"/>
+    </table>
+    <table name="recipeingredient" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="recipe_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="ingredient_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_recipeingredient_1" columns="ingredient_id" ref-table="ingredients" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_recipeingredient_2" columns="recipe_id" ref-table="recipes" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="recipes" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="name" sqlType="CHAR(512)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="instructions" sqlType="CHAR(10240)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="source" sqlType="CHAR(512)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="serving" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="cooktime" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="preptime" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="difficulty" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_recipeingredient_2" table="recipeingredient" schema="" catalog="" columns="recipe_id"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+    </table>
+  </data-source>
+</component>

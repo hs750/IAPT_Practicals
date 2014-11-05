@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{=URL('static','css/recipe.css')}}" media="screen" />
+    </head>
+    <body>
+        <header>
+            <h1>Harrison's Amazing Recipe Database</h1>
+        </header>
+        <nav>
+            <ul>
+                <li>{{=A('Home', _href=URL('Recipe', 'default', 'index'))}}</li>
+                <li>{{=A('Add Ingredient', _href=URL('Recipe', 'default', 'addIngredient'))}}</li>
+                <li>{{=A('Add Recipe', _href=URL('Recipe', 'default', 'addRecipe'))}}</li>
+                <li>{{=A('View Ingredients', _href=URL('Recipe', 'default', 'ingredients'))}}</li>
+            </ul>
+        </nav>
+        <main>
+            {{include}}
+            {{pass}}
+        </main>
+        <footer>
+            Copyright Harrison Spain
+        </footer>
+    </body>
+
+
+</html>
+
